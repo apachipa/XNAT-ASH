@@ -1,25 +1,25 @@
 version: '2'
 services: 
     xnat-web:
-       build: /home/rancher_admin/ashok-xnat/tomcat
+       build: <path to tomcat folder>
        ports:
         - "8081:8080"
        volumes:
-         - /home/rancher_admin/ashok-xnat/webapps:/opt/tomcat/webapps
-         - /home/rancher_admin/ashok-xnat/plugins:/data/xnat/home/plugins
+         - <path to webapps folder>:/opt/tomcat/webapps
+         - <path to plugins folder>:/data/xnat/home/plugins
          - /var/run/docker.sock:/var/run/docker.sock
        expose:
         - "8080"
        links:
         - xnat-db    
     xnat-db:
-       build: /home/rancher_admin/ashok-xnat/postgres
+       build: <path to postgres folder>
        expose:
          - "5432"
        volumes:
-         - /home/rancher_admin/ashok-xnat/postgres-data:/var/lib/postgresql/data
+         - <path to postgres-data folder which will be created on the file in the parent folder>:/var/lib/postgresql/data
     xnat-nginx:
-       build: /home/rancher_admin/ashok-xnat/nginx
+       build: <path to nginx folder>
        ports:
         - "80:80"
        expose: 
