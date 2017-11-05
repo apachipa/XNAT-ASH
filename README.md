@@ -28,3 +28,5 @@ To login to XNAT browse to "FQDN" or "IP" address of the underlying host/server 
 
 Username: admin
 password: admin 
+
+Thanks to NrgXnat!.
